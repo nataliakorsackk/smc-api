@@ -1,0 +1,23 @@
+{
+  "name": "smc-api",
+  "version": "1.0.0",
+  "description": "Aplicação destinada ao projeto SMC - Sistema de Monitoramento de Calamidades",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nataliakorsackk/smc-api.git"
+  },
+  "keywords": [
+    "smc",
+    "calamidade"
+  ],
+  "author": "Laura Foscarini Fetter e Natália Taíse Pithan Korsack Rosa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nataliakorsackk/smc-api/issues"
+  },
+  "homepage": "https://github.com/nataliakorsackk/smc-api#readme"
+}
