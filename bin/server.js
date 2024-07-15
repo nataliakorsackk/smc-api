@@ -1,3 +1,7 @@
+const http = require('http');
+const PORT = process.env.PORT || 5000;
+
+
 var mysql = require("mysql");
 require("dotenv").config();
 const app = require("../src/api");
@@ -10,11 +14,9 @@ const conection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'SMC'
+    database: 'smc'
 })
 
-const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, () => {
+/app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
 });
