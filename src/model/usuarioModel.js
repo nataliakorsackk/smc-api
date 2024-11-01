@@ -1,15 +1,15 @@
 const { query } = require('./database')
 
 exports.usuarioPeloCPF = async (CPF) => {
-    const usuario = query(
-        `SELECT * FROM  usuario WHERE cpf = ${CPF}`
-    )
+  const usuario = await query(
+      `SELECT * FROM usuario WHERE cpf = ?`, [CPF]
+  );
 
-    if (usuario?.lenght > 0) {
-        return true;
-    }
+  if (usuario?.length > 0) {
+      return true;
+  }
 
-    return false;
+  return false;
 };
 
 exports.criaNovoUsuario = async (nome, cpf, dataNascimento, endereco, email, senha) => {

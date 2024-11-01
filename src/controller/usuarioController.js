@@ -10,7 +10,7 @@ exports.criarUsuario = async (req, res) => {
   const usuarioPeloCPF = await usuarioModel.usuarioPeloCPF(cpf)
 
   if (usuarioPeloCPF) {
-    return res.status(400).send('Usuario já cadastrado!')
+    return res.status(409).send('Usuario já cadastrado!')
   }
 
   const criaNovoUsuario = await usuarioModel.criaNovoUsuario(nome, cpf, dataNascimento, endereco, email, senha);

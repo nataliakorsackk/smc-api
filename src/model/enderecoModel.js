@@ -1,15 +1,15 @@
 const { query } = require('./database')
 
 exports.enderecoPeloNumero = async (numero) => {
-    const endereco = query(
-        `SELECT * FROM  endereco WHERE numero = ${NUMERO}`
-    )
+  const endereco = await query(
+      `SELECT * FROM endereco WHERE numero = ?`, [numero]
+  );
 
-    if (endereco?.lenght > 0) {
-        return true;
-    }
+  if (endereco?.length > 0) {
+      return true;
+  }
 
-    return false;
+  return false;
 };
 
 exports.criaNovoEndereco = async (cep, estado, cidade, bairro, complemento, rua, numero) => {
@@ -20,7 +20,7 @@ exports.criaNovoEndereco = async (cep, estado, cidade, bairro, complemento, rua,
   
     try {
       const result = await query(novoEndereco);
-      return result.insertId;
+      return result;
     } catch (error) {
       throw new Error('Erro ao cadastrar endereço: ' + error.message);
     }
