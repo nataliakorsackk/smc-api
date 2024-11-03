@@ -9,4 +9,3 @@ exports.criarTelefone = async (req, res) => {
     const novoTelefone = await telefoneModel.criaNovoTelefone(numero, tipo, individuo_cpf);
     return res.status(201).json({ message: 'Telefone cadastrado com sucesso', telefone: novoTelefone });
 };
-
